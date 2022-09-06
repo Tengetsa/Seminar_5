@@ -10,13 +10,13 @@ void Task36()
 
     FillArray(array);
     PrintArray(array);
+    Console.WriteLine();
     IndexSumOdd(array);
 }
 
 void FillArray(int[] array)
 {
-    int length = array.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().Next(-20, 21);
     }
@@ -24,8 +24,7 @@ void FillArray(int[] array)
 
 void PrintArray(int[] array)
 {
-    int length = array.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         Console.Write(array[i] + " ");
     }
@@ -40,7 +39,7 @@ void IndexSumOdd(int[] array)
         result = array[i];
         sum += result;
     }
-    Console.WriteLine($" - Сумма элементов, стоящих на нечётных позициях = {sum}");
+    Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях = {sum}");
 }
 
 Task36();
