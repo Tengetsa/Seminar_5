@@ -43,5 +43,3 @@ void IndexSumOdd(int[] array)
 }
 
 Task36();
-
-
