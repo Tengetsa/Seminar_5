@@ -3,20 +3,20 @@
 
 void Task34()
 {
-    int size = 10;
+    Console.WriteLine("Задайте длину массива: ");
+    int size = int.Parse(Console.ReadLine()!);
+
     int[] array = new int[size];
 
     FillArray(array);
     PrintArray(array);
-
-    int evenNumber = IndexOf(array);
-    Console.WriteLine($" - количество четных числе в массиве {evenNumber}");
+    Console.WriteLine();
+    CountEvenNumber(array);
 }
 
 void FillArray(int[] array)
 {
-    int length = array.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         array[i] = new Random().Next(100, 1000);
     }
@@ -24,24 +24,22 @@ void FillArray(int[] array)
 
 void PrintArray(int[] array)
 {
-    int length = array.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         Console.Write($"{array[i]} ");
     }
 }
 
-int IndexOf(int[] array, int cound = 0)
+void CountEvenNumber(int[] array, int count = 0)
 {
-    int length = array.Length;
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
         if(array[i] % 2 == 0)
         {
-            cound += 1;
+            count += 1;
         }
     }
-    return cound;
+    Console.WriteLine($"Количество четных числе в массиве {count}");
 }
 
 Task34();
